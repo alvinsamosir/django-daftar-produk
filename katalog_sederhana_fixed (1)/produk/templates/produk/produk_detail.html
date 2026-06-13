@@ -1,0 +1,19 @@
+{% extends 'produk/base.html' %}
+
+{% block title %}{{ produk.nama }}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'produk_list' %}" class="btn" style="background-color: #666;">← Kembali ke Daftar Produk</a>
+    
+    <h1>{{ produk.nama }}</h1>
+    
+    <div style="margin: 20px 0; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+        <p><strong>💰 Harga:</strong> {{ produk.harga }}</p>
+        <p><strong>📂 Kategori:</strong> {{ produk.kategori }}</p>
+        <p><strong>📦 Stok:</strong> {{ produk.stok }} unit</p>
+        <p><strong>📝 Deskripsi Lengkap:</strong></p>
+        <p style="margin-top: 10px;">{{ produk.deskripsi }}</p>
+    </div>
+    
+    <button class="btn" onclick="alert('Fitur pembelian akan segera hadir!')">Beli Sekarang</button>
+{% endblock %}

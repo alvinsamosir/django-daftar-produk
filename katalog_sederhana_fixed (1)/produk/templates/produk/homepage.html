@@ -1,0 +1,19 @@
+{% extends 'produk/base.html' %}
+
+{% block title %}Home - Katalog Produk{% endblock %}
+
+{% block content %}
+    <h1>Selamat Datang di Website Katalog Produk</h1>
+    <p>Website ini menyediakan informasi tentang berbagai produk terbaik yang kami tawarkan.</p>
+    <p>Temukan produk-produk berkualitas dengan harga terbaik hanya di sini!</p>
+    
+    <h2>Kenapa Belanja di Sini?</h2>
+    <ul>
+        <li>✅ Produk Original 100%</li>
+        <li>✅ Garansi Resmi</li>
+        <li>✅ Pengiriman Cepat</li>
+        <li>✅ Customer Service Ramah</li>
+    </ul>
+    
+    <a href="{% url 'produk_list' %}" class="btn">Lihat Produk Kami →</a>
+{% endblock %}

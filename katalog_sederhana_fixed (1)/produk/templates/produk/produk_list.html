@@ -1,0 +1,22 @@
+{% extends 'produk/base.html' %}
+
+{% block title %}Daftar Produk{% endblock %}
+
+{% block content %}
+    <h1>Daftar Produk</h1>
+    <p>Menampilkan {{ jumlah_produk }} produk unggulan kami</p>
+    
+    <div style="text-align: center;">
+        {% for produk in produk_list %}
+        <div class="produk-card">
+            <h3>{{ produk.nama }}</h3>
+            <p><strong>Harga:</strong> {{ produk.harga }}</p>
+            <p><strong>Kategori:</strong> {{ produk.kategori }}</p>
+            <p>{{ produk.deskripsi|truncatewords:15 }}</p>
+            <a href="{% url 'produk_detail' produk.id %}" class="btn">Lihat Detail →</a>
+        </div>
+        {% empty %}
+        <p>Belum ada produk tersedia.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
